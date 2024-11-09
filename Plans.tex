@@ -1,0 +1,163 @@
+\documentclass[11pt]{report}
+
+% Loading necessary packages
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{pifont}
+\usepackage{xcolor}
+\usepackage{ulem}
+\usepackage{fontawesome}
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{microtype}
+\usepackage{listings}
+\usepackage[switch]{lineno}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{pgfgantt}
+
+% Typography settings
+\onehalfspacing
+\usepackage{mathptmx}
+
+% Header and Footer Settings
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\fancyhf{}
+\rhead{Certifications To-Do List}
+\lhead{Gerald's Escape Plan}
+\cfoot{\thepage}
+
+% Define Eisenhower Matrix colors
+\definecolor{Do}{rgb}{0.94, 0.6, 0.6}       % Red for urgent and important
+\definecolor{Delegate}{rgb}{0.65, 0.95, 0.65} % Green for important but not urgent
+\definecolor{Schedule}{rgb}{1.0, 0.85, 0.65}  % Orange for urgent but not important
+\definecolor{Eliminate}{rgb}{0.8, 0.8, 0.8}   % Gray for not urgent or important
+
+% Define commands for task categories
+\newcommand{\done}{\checkmark}
+\newcommand{\pending}{$\square$}
+\newcommand{\refine}{$\circlearrowright$}
+\newcommand{\issue}{$\triangle$}
+\newcommand{\draft}{\faPencil}  
+\newcommand{\moved}{\faArrowCircleRight} 
+
+% Define flowchart styles for TikZ
+\tikzset{
+	startstop/.style = {rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=red!30, font=\footnotesize},
+	process/.style = {rectangle, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=orange!30, font=\footnotesize},
+	decision/.style = {rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30, font=\footnotesize},
+	arrow/.style = {thick,->,>=stealth}
+}
+
+% Custom colors for Eisenhower Matrix
+\definecolor{Paid}{rgb}{0.94, 0.6, 0.6}  % Red-ish for urgent and important
+\definecolor{Free}{rgb}{0.65, 0.95, 0.65}  % Green for not urgent but important
+\definecolor{Trial}{rgb}{1.0, 0.85, 0.65}  % Orange for urgent but not important
+\definecolor{Optional}{rgb}{0.8, 0.8, 0.8}  % Gray for not urgent and not important
+
+% Custom commands for Eisenhower Matrix quadrants
+\newcommand{\Paid}[1]{\colorbox{Paid}{#1}}          
+\newcommand{\Free}[1]{\colorbox{Free}{#1}}   
+\newcommand{\Trial}[1]{\colorbox{Trial}{#1}}   
+\newcommand{\Optional}[1]{\colorbox{Optional}{#1}}
+
+\begin{document}
+	
+	\title{\textbf{Certifications To-Do List for Escape Plan}}
+	\author{Gerald}
+	\date{\today}
+	\maketitle
+	
+\section*{Legend}
+\begin{itemize}[label=$\star$]
+	\item \makebox[\textwidth][l]{\Free{\textbf{Green}} \dotfill Free}
+	\item \makebox[\textwidth][l]{\Trial{\textbf{Yellow}} \dotfill Trial and Trial periods}
+	\item \makebox[\textwidth][l]{\Paid{\textbf{Orange}} \dotfill Paid}
+\end{itemize}
+
+
+\section*{Certifications for CV Enhancement}
+
+\subsection*{Essential Certifications}
+\begin{itemize}[label=$\Box$, leftmargin=2em]
+	\item \Free{\textbf{Bioinformatics Specialization by UC San Diego (Coursera: \$49/month)}}  \\
+	Core bioinformatics tools and techniques: genome assembly, sequence alignment.
+	
+	\item \Paid{\textbf{Nextflow Training (Seqera Labs: \$200)}}  \\
+	Workflow orchestration for scalable genomic pipelines.
+	
+	\item \Trial{\textbf{Microsoft Certified: Azure Data Engineer Associate}}  \\
+	Cloud resources for large-scale data processing.
+	
+	\item \Free{\textbf{Python for Everybody (Coursera, Free with Audit)}}  \\
+	Python programming fundamentals for data analysis and automation.
+	
+	\item \Paid{\textbf{Linux Foundation Certified Engineer (LFCE) (\$300)}}  \\
+	Advanced Linux skills for workflow automation.
+	
+	\item \Trial{\textbf{Google Project Management Certificate}}  \\
+	Covers Agile, Scrum, and project lifecycle.
+	
+	\item \Free{\textbf{Successful Negotiation: Essential Strategies (Coursera, Free)}}  \\
+	Communication and persuasion skills.
+	
+	\item \Paid{\textbf{Business Foundations Professional Certificate (Wharton School, edX: \$149/month)}}  \\
+	Essentials of business decision-making, leadership, and financial acumen.
+\end{itemize}
+
+\subsection*{Robust Certifications}
+\begin{itemize}[label=$\Box$, leftmargin=2em]
+	\item \Free{\textbf{Harvard Medical School: Reproducible Science}}  \\
+	Emphasizes computational rigor and statistical tools.
+	
+	\item \Trial{\textbf{DeepLearning.AI TensorFlow Developer Certificate}}  \\
+	Master TensorFlow and apply machine learning to bioinformatics datasets.
+	
+	\item \Paid{\textbf{Google Cloud Professional Data Engineer (\$125 for exam)}}  \\
+	Design and deploy scalable data solutions on Google Cloud.
+	
+	\item \Free{\textbf{EDX: Genomic Data Science by Johns Hopkins}}  \\
+	Introduction to tools like Galaxy, Python, and R for genomic analysis.
+	
+	\item \Paid{\textbf{Certified Kubernetes Administrator (CKA) (\$375)}}  \\
+	Containerized workflow management and orchestration for scalable pipelines.
+	
+	\item \Trial{\textbf{Coursera: Machine Learning by Stanford (Free Trial Available)}}  \\
+	Introduction to ML techniques and applications, taught by Andrew Ng.
+\end{itemize}
+
+\subsection*{Optional Certifications}
+\begin{itemize}[label=$\Box$, leftmargin=2em]
+	\item \Paid{\textbf{AWS Certified Solutions Architect – Associate (\$150 for exam)}}  \\
+	Cloud-based solution design for scalability and efficiency.
+	
+	\item \Trial{\textbf{Udemy: Python for Data Science and Machine Learning}}  \\
+	Practical Python skills for bioinformatics and data science applications.
+	
+	\item \Free{\textbf{Intro to Computational Biology (MIT OpenCourseWare)}}  \\
+	A foundational course covering algorithms and computational techniques in biology.
+	
+	\item \Free{\textbf{HubSpot Academy: Inbound Marketing Certification (Free)}}  \\
+	Teaches marketing basics, ideal for consulting gigs or promoting personal services.
+	
+	\item \Paid{\textbf{Introduction to Business Management (University of Edinburgh, edX)}}  \\
+	General understanding of business operations and management.
+\end{itemize}
+
+
+
+
+	
+\end{document}
