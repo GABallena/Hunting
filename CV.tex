@@ -1,22 +1,35 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
 
-% ModernCV themes
-\moderncvstyle{banking} % Style options: casual, classic, banking, fancy
-\moderncvcolor{blue}    % Color options: blue, orange, green, red, purple, grey, black
-\nopagenumbers{}         % Suppress page numbers
+% Adjust margins and layout
+\usepackage[a4paper, margin=1in, bottom=1in]{geometry} % Adjusted bottom margin for footer
 
-% Required packages for XeLaTeX or LuaLaTeX
+% ModernCV themes
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\nopagenumbers{} % Suppress page numbers
+
+% Required packages for ModernCV
 \usepackage{fontspec}       % Font support for XeLaTeX or LuaLaTeX
 \usepackage{fontawesome5}   % FontAwesome icons
 \usepackage{academicons}    % ORCID icons
 
-% Adjust margins
-\usepackage[scale=0.75]{geometry}
+% Fancyhdr for custom footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\normalsize References available only upon request and if shortlisted} %Larger footer text
+\setlength{\footskip}{50pt} % Push footer closer to the page's bottom edge
+\renewcommand{\headrulewidth}{0pt} % Remove header line
+\renewcommand{\footrulewidth}{0pt} % Remove footer line
 
-% Set fonts to Georgia
-\setmainfont{Georgia}       % Main serif font
-\setsansfont{Georgia}       % Use Georgia for sans-serif text (consistent look)
-\setmonofont{Courier New}   % Optional: Monospace font (fallback)
+% Adjust list spacing globally
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0pt, itemsep=1pt, leftmargin=1.5em}
+
+% Set fonts to Garamond
+\setmainfont{EB Garamond}      % Ensure this is installed
+\setsansfont{EB Garamond}      % Consistent sans-serif font
+\setmonofont{Courier New}      % Monospace font
 
 % Personal data
 \name{Gerald Amiel}{Ballena}
@@ -26,20 +39,16 @@
 \social[linkedin]{gerald-amiel-ballena}
 \extrainfo{\aiOrcid \ \href{https://orcid.org/0009-0000-8857-9755}{orcid.org/0009-0000-8857-9755}}
 
-%----------------------------------------------------------------------------------
-% Custom Title Section
-%----------------------------------------------------------------------------------
+% Custom title section
 \renewcommand{\makecvtitle}{
 	\vspace*{-2em}
 	\begin{center}
 		{\Huge \textbf{Gerald Amiel Ballena}} \\[0.5em]
-		{\small
-			\faEnvelope \ \href{mailto:gmballena@up.edu.ph}{gmballena@up.edu.ph} \quad
-			\faGithub \ \href{https://github.com/GABallena}{github.com/GABallena} \quad
-			\faLinkedin \ \href{https://linkedin.com/in/gerald-amiel-ballena}{linkedin.com/in/gerald-amiel-ballena} \\[0.5em]
-			\faMapMarker \ Metro Manila, Philippines \\[0.5em]
-			\aiOrcid \ \href{https://orcid.org/0009-0000-8857-9755}{orcid.org/0009-0000-8857-9755}
-		}
+		\faEnvelope \ \href{mailto:gmballena@up.edu.ph}{gmballena@up.edu.ph} \quad
+		\faGithub \ \href{https://github.com/GABallena}{github.com/GABallena} \quad
+		\faLinkedin \ \href{https://linkedin.com/in/gerald-amiel-ballena}{linkedin.com/in/gerald-amiel-ballena} \\[0.5em]
+		\faMapMarker \ Metro Manila, Philippines \quad
+		\aiOrcid \ \href{https://orcid.org/0009-0000-8857-9755}{orcid.org/0009-0000-8857-9755}
 	\end{center}
 	\vspace{1.5em}
 }
@@ -51,26 +60,21 @@
 	
 	\makecvtitle
 	
-	\section{Professional Summary}
-	Experienced bioinformatician with a strong background in computational biology, phylogenetics, and metagenomics. Skilled in developing and optimizing pipelines for large-scale sequence analysis. Passionate about applying robust, innovative methodologies to solve complex biological problems.
-	
+\section{Professional Summary}
+Versatile bioinformatics specialist with  focused on general expertise in scalable workflows, computational biology, and machine learning. Skilled in developing scalable pipelines and implementing robust methodologies to tackle complex biological problems.
+
+
+
 \section{Experience}
-
 \textbf{2024 – Present} \hfill \textbf{Project Technical Specialist} \\
-\textit{University of the Philippines, College of Public Health} \\
+\textit{University of the Philippines, College of Public Health} \\[-1em]
+\begin{itemize}
+	\item Developed scalable bioinformatics workflows for high-throughput sequence analysis.
+	\item Applied metagenomic profiling techniques to environmental datasets.
+	\item Collaborated with cross-disciplinary teams on projects involving data visualization and computational modeling.
+\end{itemize}
 
 
-
-
-\section{Education}
-
-\cvitem{University of the Philippines Diliman}{\textbf{M.S. Microbiology} \hfill \textit{Graduated: 2022}}
-\cvitem{Thesis}{\textit{[Insert Thesis Title]}}
-\cvitem{Specifics}{\textit{[Insert notable coursework or achievements]}}
-
-\cvitem{University of the Philippines Baguio}{\textbf{B.S. Biology} \hfill \textit{Graduated: 2018}}
-\cvitem{Thesis}{\textit{[Insert Thesis Title]}}
-\cvitem{Specifics}{\textit{[Insert notable coursework or achievements]}}
 
 \section{Skills}
 
@@ -105,38 +109,127 @@
 
 
 	
-\section{Certifications}
+\section{Certifications and Relevant Coursework}
+
+\subsection{Certifications}
+\cvitem{AI Fundamentals}{\dotfill Nov 2024}
+\cvitem{Data Literacy}{\dotfill Nov 2024}
 
 \subsection{Fundamentals Courses}
-\cvitem{AI Fundamentals}{\dotfill Nov 2024} % [40†source]
-\cvitem{Data Literacy}{\dotfill Nov 2024} % [41†source]
-
-\subsection{Beginner-Level Courses}
-\cvitem{Introduction to Data Engineering}{\dotfill Nov 2024} % [42†source]
+\cvitem{Introduction to Data Engineering}{\dotfill Nov 2024}
 
 \subsection{Intermediate-Level Courses}
-\cvitem{Intermediate R}{\dotfill Nov 2024} % [39†source]
-\cvitem{Introduction to Bioconductor in R}{\dotfill Nov 2024} % [43†source]
-\cvitem{RNA-Seq with Bioconductor in R}{\dotfill Nov 2024} % [44†source]
-\cvitem{Differential Expression Analysis with limma in R}{\dotfill Nov 2024} % [45†source]
-\cvitem{ChIP-Seq with Bioconductor in R}{\dotfill Nov 2024} % [46†source]
-\cvitem{Analyzing Genomic Data in R}{\dotfill Nov 2024} % [47†source]
+\cvitem{Intermediate R}{\dotfill Nov 2024}
+\cvitem{Introduction to Bioconductor in R}{\dotfill Nov 2024}
+\cvitem{RNA-Seq with Bioconductor in R}{\dotfill Nov 2024}
+\cvitem{Differential Expression Analysis with limma in R}{\dotfill Nov 2024}
+\cvitem{ChIP-Seq with Bioconductor in R}{\dotfill Nov 2024}
+\cvitem{Analyzing Genomic Data in R}{\dotfill Nov 2024}
 
 \subsection{Advanced-Level Courses}
-\cvitem{Hyperparameter Tuning in R}{\dotfill Nov 2024} % [New addition]
-\cvitem{Designing Machine Learning Workflows in Python}{\dotfill Nov 2024} % New addition
+\cvitem{Hyperparameter Tuning in R}{\dotfill Nov 2024}
+\cvitem{Designing Machine Learning Workflows in Python}{\dotfill Nov 2024}
+
+\subsection{Ongoing Courses}
+\cvitem{Ensemble Methods in Python}{Bagging, Boosting, Stacking}
+\cvitem{Visualizing Geospatial Data in R}{Visualizing complex spatial datasets for actionable insights.}
+
+\subsection{Assessments}
+\cvitem{Azure Fundamentals}{Advanced | Score: 180 | Percentile: 99th}
+\cvitem{Data Storytelling}{Advanced | Score: 200 | Percentile: 99th}
 
 
-	
 \section{Projects}
-\cvitem{}{For more details, visit \href{https://github.com/GABallena/Documentation/blob/main/Documentation.pdf}{GitHub Documentation.pdf}.\dotfill}
 
-\subsection{The Repositories}
-\cvitem{Project4}{Scripts related to metagenomics.}
-\cvitem{Main}{Scripts for general use case scenarios, such as fetching Bioconda packages.}
-\cvitem{Side}{Curiosity/exploration-driven scripts.}
-\cvitem{Health}{Scripts related to living (or trying to live) a healthy lifestyle.}
-\cvitem{Finance}{\textbf{WIP}; scripts intended for personal finance management.}
+\cvitem{}{For more details on public projects, visit {GitHub Documentation.pdf}. \\
+	\textbf{Note} Some repositories including Documentation repo access is currently restricted due to NDA obligations.}
+
+
+\subsection{Scripts Repositories}
+
+\cvitem{Side repo}{Scripts for general-purpose tasks, including package management and workflow setup.}
+\cvitem{Experimental Repository}{Exploratory scripts focused on innovative computational techniques.}
+\cvitem{Health repo}{Tools and scripts aimed at health-related data analysis and personal wellness tracking.}
+\cvitem{Finance repo}{\textbf{WIP}; developing scripts for personal finance management.}
+\cvitem{Project4 repo}{Scripts designed for NGS analyses and workflow automation; details kept private due to project confidentiality.}
+\cvitem{Kitchen repo}{We cookin' some unconventional ideas here.}
+
+\subsection{Documentation Repositories}
+
+\cvitem{Documentation repo}{Explanation of every script I've ever written; written in a non-technical tone for non-technical audiences.}
+\cvitem{Confidential repo}{LaTeX-compiled reports and documentation of my work as PTS I; restricted access due to confidentiality.}
+\cvitem{Hunting repo}{Includes this CV, my resume, associated \texttt{.tex} files, and certifications; tailored for job hunting.}
+
+
+
+\subsection{Key Projects}
+
+\cvitem{Bioinformatics Workflow Development}{
+	Designed and implemented modular pipelines for omics data analysis, emphasizing quality control, data assembly, and scalable workflows. Focused on creating reproducible methodologies applicable across diverse datasets.}
+
+\cvitem{Spatial Data Analysis}{
+	Utilized QGIS, R and geospatial libraries to visualize spatial patterns in biological datasets. Developed custom visualization tools for integrating geospatial and genomic data in ecosystem-level studies.}
+
+\cvitem{Public Health Data Exploration}{
+	Developed computational approaches for microbial profiling and identifying markers of interest in public health datasets. Leveraged metagenomic techniques to enable actionable insights for research studies.}
+
+
+\cvitem{Development of K-mer Analysis and Statistical Workflow}{
+	\begin{itemize}
+		\item \textbf{Objective:} Build an advanced pipeline for k-mer generation, variance analysis, and distribution modeling.
+		\item \textbf{Details:} Focused on creating statistical workflows to evaluate parametric and non-parametric fits, automating evaluations with custom Python scripts.
+		\item \textbf{Tools \& Technologies:} Jellyfish, Python, Snakemake, Conda.
+	\end{itemize}
+}
+
+\cvitem{High-Accuracy Sequence Alignment Workflow}{
+	\begin{itemize}
+		\item \textbf{Objective:} Create a modular workflow for high-identity sequence alignment with validation across multiple tools.
+		\item \textbf{Details:} Integrated tools like Bowtie2, BWA, and Minimap2 with standardized outputs to enable comparative analysis.
+		\item \textbf{Tools \& Technologies:} Bowtie2, BWA, Minimap2, KMA, Python, Snakemake.
+	\end{itemize}
+}
+
+\cvitem{Shannon Entropy Analysis of K-mers and Taxonomic Profiles}{
+	\begin{itemize}
+		\item \textbf{Objective:} Quantify sequence complexity and diversity using entropy-based metrics.
+		\item \textbf{Details:} Developed workflows to calculate and integrate Shannon entropy metrics for assessing genomic diversity and data quality.
+		\item \textbf{Tools \& Technologies:} Jellyfish, Kraken2, Python, Snakemake.
+	\end{itemize}
+}
+
+\cvitem{Comprehensive Workflow for Contaminant Removal and SCG Validation}{
+	\begin{itemize}
+		\item \textbf{Objective:} Design a robust pipeline for contaminant filtering and SCG validation.
+		\item \textbf{Details:} Automated filtering using k-mer-based methods and validated results with SCG retention analysis via BUSCO.
+		\item \textbf{Tools \& Technologies:} BUSCO, Jellyfish, Python, Snakemake, Conda.
+	\end{itemize}
+}
+
+\cvitem{Pipeline Automation and Dependency Management}{
+	\begin{itemize}
+		\item \textbf{Objective:} Streamline bioinformatics workflows with automated dependency checks and alias creation.
+		\item \textbf{Details:} Developed:
+		\begin{itemize}
+			\item \texttt{bioconda\_search.py} to identify relevant bioinformatics tools.
+			\item \texttt{create\_aliases.py} to automate Bash alias generation.
+			\item \texttt{check\_dependencies.py} and \texttt{append\_new.py} for managing and updating YAML files.
+		\end{itemize}
+		\item \textbf{Tools \& Technologies:} Python, YAML, Conda, Bioconda.
+	\end{itemize}
+}
+
+\cvitem{Version Management and Workflow Validation}{
+	\begin{itemize}
+		\item \textbf{Objective:} Ensure reproducibility in bioinformatics workflows.
+		\item \textbf{Details:} \texttt{versioncheck.bash} validates installed tool versions against expected configurations, improving workflow consistency.
+		\item \textbf{Tools \& Technologies:} Bash, Python, YAML.
+	\end{itemize}
+}
+
+\subsection{Ongoing Coursework}
+Ensemble Methods in Python
+Visualizing Geospatial Data in R
 
 
 	
@@ -155,5 +248,7 @@
 \section{References}
 \textbf{Available upon request \& only if already shortlisted.}
 
-	
+
 \end{document}
+
+% Add at the very end of the document
