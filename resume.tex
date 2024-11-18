@@ -6,7 +6,6 @@
 \usepackage{orcidlink}
 \geometry{left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm}
 
-% Command to create section titles
 \newcommand{\sectiontitle}[1]{\vspace{10pt}\textbf{\Large #1}\vspace{5pt}\hrule\vspace{10pt}}
 
 \begin{document}
@@ -23,25 +22,29 @@
 		\orcidlink{0009-0000-8857-9755} \ \href{https://orcid.org/0009-0000-8857-9755}{orcid.org/0009-0000-8857-9755}
 	\end{center}
 	
-	% Education
+	% Professional Summary
+	\sectiontitle{Professional Summary}
+	Bioinformatics specialist with extensive experience in developing scalable workflows for high-throughput sequencing data, single-cell analysis, and visualization tools. Proven expertise in automating data pipelines, ensuring reproducibility, and delivering actionable results for public health and environmental research.
+	
 	% Experience
 	\sectiontitle{Experience}
 	
 	\textbf{Project Technical Specialist (Contract)} \hfill \textit{University of the Philippines, College of Public Health} \\
 	\textit{2024 – Present}
-\begin{itemize}[left=0pt]
-	\item Designed and implemented dynamic metagenomics pipelines enabling accurate profiling of microbial communities.
-	\item Automated data preprocessing workflows using Snakemake, reducing manual load by 90\% when data is available while also enhancing reproducibility.
-	\item Collaborated with multidisciplinary teams to ensure robust data analysis and visualization tailored for research publications.
-\end{itemize}
-
-	
-	% Projects
-	\sectiontitle{Ongoing Key Projects} \dotfill \href{https://github.com/GABallena}{GitHub Link}
 	\begin{itemize}[left=0pt]
-		\item \textbf{Bioinformatics Workflow Development:} Designed modular pipelines for omics data analysis with a focus on quality control and scalable workflows.
-		\item \textbf{Shannon Entropy Analysis of K-mers:} Quantified sequence complexity using entropy-based metrics for diversity assessment.
-		\item \textbf{Pipeline Automation:} Developed tools for dependency management and alias creation to streamline workflows.
+		\item Designed scalable metagenomics pipelines for microbial community profiling, integrating tools like \textbf{Kraken2}, \textbf{Bracken}, and \textbf{scikit-bio}.
+		\item Automated preprocessing and trimming workflows using \textbf{Snakemake}, enhancing reproducibility and reducing manual effort by 90\%.
+		\item Developed modular workflows for taxonomic profiling, diversity analysis, and functional annotation.
+		\item Visualized complex biological datasets using tools like \textbf{ggplot2}, \textbf{Plotly}, and \textbf{Shiny}.
+		\item Collaborated with multidisciplinary teams to analyze high-dimensional sequencing data and present findings for research publications.
+	\end{itemize}
+	
+	% Key Projects
+	\sectiontitle{Key Projects} \dotfill \href{https://github.com/GABallena}{GitHub Link}
+	\begin{itemize}[left=0pt]
+		\item \textbf{Single-Cell Workflow Development:} Designed Python and R pipelines for preprocessing, integration, and visualization of single-cell datasets.
+		\item \textbf{K-mer and Shannon Entropy Analysis:} Quantified sequence complexity using entropy metrics for diversity assessment across datasets.
+		\item \textbf{Metagenomic Workflow Automation:} Built Snakemake pipelines for reproducible analysis of multi-terabyte sequencing datasets.
 	\end{itemize}
 	
 	% Certifications
@@ -52,6 +55,7 @@
 		\item RNA-Seq with Bioconductor in R \dotfill Nov 2024
 	\end{itemize}
 	
+	% Education
 	\sectiontitle{Education}
 	
 	\textbf{University of the Philippines Diliman} \\
@@ -61,70 +65,40 @@
 	
 	\textbf{University of the Philippines Baguio} \\
 	\textit{Graduated: June 2018} \\
-	Thesis: \textbf{Bioelectrocatalysis by Novel Electrogenic Alkaliphilic Bacteria Bacillus sp. BAB-3442 Using Dual-Chambered Microbial Fuel Cell} \dotfill Poster Presentation (\texttt{PSM 47})
+	Thesis: \textit{Bioelectrocatalysis by Novel Electrogenic Alkaliphilic Bacteria \textit{Bacillus} sp. BAB-3442 Using Dual-Chambered Microbial Fuel Cell} \dotfill Poster Presentation (\texttt{PSM 47})
 	
 	% Skills
 	\sectiontitle{Skills}
 	
 	\subsection*{Programming}
-	Python, R, Bash, Perl
+	Python, R, Bash
 	
 	\subsection*{Bioinformatics Tools}
 	\begin{itemize}[left=0pt]
+		\item \textbf{Single-Cell Analysis:} scikit-learn
 		\item \textbf{Metagenomics:} Kraken2, MetaPhlAn, HUMAnN
-		\item \textbf{Assembly \& Binning:} MEGAHIT, METAWRAP, CheckM
-		\item \textbf{Genomics:} CLC Workbench, Roary, MinHash
-		\item \textbf{Quality Control:} FastQC, BUSCO, QUAST
-		\item \textbf{Trimming:} Trimmomatic, Sickle, Cutadapt
-		\item \textbf{Phylogenetics:} RaxML, FastTree, IQ-TREE, phyML, BEAST
-		\item \textbf{Gene Ontology:} KEGG, GOseq
-		\item \textbf{Annotation:} Prokka, ShortBRED, EggNOG-mapper
-		\item \textbf{Others:} DESeq2, BBMap Suite, anvio-8, SPAdes
+		\item \textbf{Assembly and Binning:} MEGAHIT, MetaWRAP, CheckM
+		\item \textbf{Annotation:} Prokka, EggNOG-mapper, KEGG
+		\item \textbf{Quality Control:} FastQC, Trimmomatic, Cutadapt, BUSCO
+		\item \textbf{Phylogenetics:} RAxML, FastTree, IQ-TREE
 	\end{itemize}
 	
 	\subsection*{Data Analysis \& Visualization}
 	\begin{itemize}[left=0pt]
+		\item \textbf{Visualization:} ggplot2, Plotly, Shiny, matplotlib
 		\item \textbf{Machine Learning:} scikit-learn, caret (R)
-		\item \textbf{Visualization:} ggplot2, Plotly, Krona, Shiny, Seaborn, Tableau
 	\end{itemize}
 	
 	\subsection*{Technical Skills}
 	\begin{itemize}[left=0pt]
 		\item \textbf{Version Control:} Git, GitHub
-		\item \textbf{High-Performance Computing:} Slurm
 		\item \textbf{Workflow Automation:} Snakemake, Conda, YAML
 		\item \textbf{Virtualization:} Docker, WSL2
-	\end{itemize}
-	
-	% Experience
-	\sectiontitle{Experience}
-	
-	\textbf{Project Technical Specialist (Contract)} \hfill \textit{University of the Philippines, College of Public Health} \\
-	\textit{2024 – Present}
-	\begin{itemize}[left=0pt]
-		\item Designed and implemented dynamic metagenomics pipelines enabling accurate profiling of microbial communities.
-		\item Automated data preprocessing workflows using Snakemake, reducing manual load by 90\% and enhancing reproducibility.
-		\item Collaborated with multidisciplinary teams to ensure robust data analysis and visualization tailored for research publications.
-	\end{itemize}
-	
-	% Projects
-	\sectiontitle{Key Projects}
-	\begin{itemize}[left=0pt]
-		\item \textbf{Bioinformatics Workflow Development:} Designed modular pipelines for omics data analysis with a focus on quality control and scalable workflows.
-		\item \textbf{Shannon Entropy Analysis of K-mers:} Quantified sequence complexity using entropy-based metrics for diversity assessment.
-		\item \textbf{Pipeline Automation:} Developed tools for dependency management and alias creation to streamline workflows.
-	\end{itemize}
-	
-	% Certifications
-	\sectiontitle{Certifications}
-	\begin{itemize}[left=0pt]
-		\item AI Fundamentals \dotfill Nov 2024
-		\item Intermediate R \dotfill Nov 2024
-		\item RNA-Seq with Bioconductor in R \dotfill Nov 2024
+		\item \textbf{Cloud Computing:} AWS, GCP (Familiarity)
 	\end{itemize}
 	
 	% References
 	\sectiontitle{References}
-	\textbf{Available only upon request and shortlisted.}
+	Available upon request and if shortlisted.
 	
 \end{document}
