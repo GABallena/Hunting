@@ -1,0 +1,301 @@
+data <- data.frame(
+  Site = c("Hi", "Hi", "SW", "SW", "SW", "SW", "Hi", "Hi", "Hi", "Hi", "CWi", "CWi", "CWi", 
+           "Hi", "Hi", "Hi", "CWi", "SW", "SW", "SW", "SW", "SW", "CWe", "SW", "CWe", "CWi", 
+           "CWi", "CWe", "CWe(conc)", "CWe(conc)", "CWe(conc)", "CWe(conc)", "CWi(conc)", "CWi(conc)",
+           "CWi(conc)", "SW(conc)", "CWe(conc)", "CWe(conc)", "CWe(conc)", "CWe(conc)", "CWi(conc)", "CWi(conc)",
+           "CWi(conc)", "SW(conc)"),
+  Volume = c(25, 75, 50, 100, 150, 150, 25, 50, 50, 75, 25, 50, 75, 50, 75, 25, 75, 100, 
+             150, 50, 100, 150, 200, 50, 400, 50, 25, 300, 500, 1000, 1500, 2000, 300, 400,
+             500, 400, 500, 1000, 1500, 2000, 300, 400, 500, 400),
+  Trial = c(2,1,3,3,4,3,1,1,3,3,1,1,1,2,2,3,1,1,1,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+            2,2,2,2,2,2,2,2),
+  Concentration = c(27.307, 111.68, 6.39, 5.66, 6.664, 6.856, 58.48, 47.814, 134.766, 
+                    141.83, 8.592, 17.093, 20.401, 141.657, 181.969, 73.005, 27.592, 
+                    3.679, 4.152, 7.441, 6.258, 5.901, 3.583, 5.931, 5.002, 18.422, 
+                    11.12, 4.276, 1.241, 1.019, 2.199, 1.729, 7.007, 25.312, 59.411, 14.399,
+                    2.02, 2.121, 2.177, 1.728, 4.469, 7.638, 12.493, 5.152),
+  Abs260_280 = c(1.911, 1.891, 2.586, 2.189, 2.099, 2.032, 1.871, 1.918, 1.897, 
+                 1.89, 2.178, 2.019, 1.908, 1.901, 1.88, 1.879, 2.077, 2.406, 
+                 2.365, 1.771, 2.159, 2.26, 2.444, 2.057, 1.897, 2.092, 1.896, 
+                 2.058, 1.728, 2.016, 1.853, 2.009, 1.932, 1.942, 1.947, 2.003, 
+                 2.053, 1.929, 2.02, 1.91, 2.095, 1.772, 2.063, 1.937),
+  Abs260_230 = c(1.2, 1.855, 0.512, 0.569, 0.578, 0.401, 1.951, 1.959, 1.952, 
+                 2.036, 1.317, 0.667, 1.102, 2.007, 1.834, 1.991, 1.706, 0.04, 
+                 0.381, 0.604, 0.163, 1.093, 0.4, 0.4, 0.791, 1.547, 1.328, 
+                 0.523, 0.125, 0.053, 0.202, 0.111, 0.134, 1.19, 1.743, 0.999, 
+                 0.666, 0.421, 0.524, 4.629, 0.478, 0.888, 1.373, 0.747),
+  Dataset = "Optimization 1"
+)
+
+
+# Additional data extracted from the image
+additional_data <- data.frame(
+  Site = c("CWi(2L)", "CWe(2L)", "CWe(2L)", "SW(2L)", "CWe(3L)", "CWe(3L)", "SW(3L)"),
+  Volume = c(2000, 2000, 2000, 3000, 3000, 3000, 3000), # Assuming volumes
+  Trial = c(1, 1, 2, 1, 1, 2, 1),                 # Assuming these are first trials
+  Concentration = c(1.52, 0.471, 1.138, 2.384, 1.206, 1.510, 4.32), # From the image
+  Abs260_280 = c(1.004, 0.5, 1.114, 6.366, 12.006, -45.604, 4.056),   # From the image
+  Abs260_230 = c(0.130, -0.077, 0.147, 0.071, 0.056, 0.066, 0.12),  # From the image
+  Dataset = "Optimization 2"
+)
+
+# Append the additional data to the existing dataset
+data_combined <- bind_rows(data, additional_data)
+print(names(data))
+print(names(additional_data))
+names(additional_data) <- names(data)
+str(data)
+str(additional_data)
+data_combined <- bind_rows(data, additional_data)
+print(dim(data_combined))  # Check dimensions
+print(tail(data_combined))  # View the last few rows
+print(data_combined)
+
+
+
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+library(stringr)
+
+# Define Okabe-Ito palette and dynamically expand it
+okabe_ito <- c(
+  "#E69F00", "#56B4E9", "#009E73", "#F0E442", 
+  "#0072B2", "#D55E00", "#CC79A7", "#999999", 
+  "#FFCC00", "#00CC99"
+)
+
+# Dynamically expand Okabe-Ito palette for the unique Site values
+okabe_ito_expanded <- rep(okabe_ito, length.out = length(unique(data_combined$Site)))
+
+# Define thresholds
+total_eluent_volume <- 100
+min_threshold_value <- 100
+ideal_threshold_value <- 200
+
+# Add calculated fields to the dataset
+data_combined <- data_combined %>%
+  mutate(
+    Total_DNA = Concentration * total_eluent_volume,
+    Log_Volume = log10(Volume),
+    Log_Total_DNA = log10(Total_DNA)
+  )
+
+# --- PLOT 1: Scatterplot (Total DNA vs Volume) ---
+
+ggplot(data_combined, aes(x = Log_Volume, y = Log_Total_DNA, color = Site, shape = Dataset)) +
+  geom_point(size = 3, alpha = 0.7) +
+  geom_hline(yintercept = log10(min_threshold_value), linetype = "dashed", color = "red", size = 0.8) +
+  geom_hline(yintercept = log10(ideal_threshold_value), linetype = "dashed", color = "blue", size = 0.8) +
+  annotate("text", x = 2.5, y = log10(min_threshold_value), label = "Min Threshold (100 ng)", 
+           color = "red", vjust = -1) +
+  annotate("text", x = 2.5, y = log10(ideal_threshold_value), label = "Ideal Threshold (200 ng)", 
+           color = "blue", vjust = -1) +
+  labs(
+    title = "Total DNA vs Volume (Log-Transformed)",
+    subtitle = "Comparison of Optimization 1 and Optimization 2",
+    x = "Log10(Volume in mL)",
+    y = "Log10(Total DNA in ng)",
+    color = "Sample Site",
+    shape = "Dataset"
+  ) +
+  scale_color_manual(values = okabe_ito_expanded) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  ) +
+  guides(
+    color = guide_legend(title = "Sample Site", nrow = 2), 
+    shape = guide_legend(title = "Optimization")
+  )
+
+# --- PLOT 2: Manhattan Plot (Log-Transformed Total DNA Across Sites (only the 5)) ---
+
+ggplot(data_combined_filtered, aes(x = Site_Index, y = Log_Total_DNA, color = Site_Group)) +
+  geom_jitter(aes(shape = Dataset), size = 3, alpha = 0.7, width = 0.2, height = 0) + # Add jitter
+  scale_color_manual(values = okabe_ito_expanded) + # Use expanded Okabe-Ito palette
+  geom_hline(yintercept = log10(min_threshold_value), linetype = "dashed", color = okabe_ito[6], size = 0.8) +
+  geom_hline(yintercept = log10(ideal_threshold_value), linetype = "dashed", color = okabe_ito[4], size = 0.8) +
+  geom_hline(yintercept = log10(500), linetype = "dashed", color = okabe_ito[5], size = 0.8) +
+  annotate("text", x = max(data_combined_filtered$Site_Index) + 1.5, 
+           y = log10(min_threshold_value) + 0.05, label = "100 ng", color = okabe_ito[6], hjust = 0) +
+  annotate("text", x = max(data_combined_filtered$Site_Index) + 1.5, 
+           y = log10(ideal_threshold_value) + 0.05, label = "200 ng", color = okabe_ito[4], hjust = 0) +
+  annotate("text", x = max(data_combined_filtered$Site_Index) + 1.5, 
+           y = log10(500) + 0.05, label = "500 ng", color = okabe_ito[5], hjust = 0) +
+  labs(
+    title = "Manhattan Plot of Log-Transformed Total DNA Across Sites",
+    subtitle = "Grouped by Site Prefix, Excluding Hi",
+    x = "Sites (as Categories)",
+    y = "Log10(Total DNA in ng)",
+    color = "Site Group",
+    shape = "Dataset"
+  ) +
+  scale_x_continuous(
+    breaks = unique(data_combined_filtered$Site_Index),  # Corrected breaks
+    labels = unique(data_combined_filtered$Site_Group)   # Corrected labels
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "bottom",
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  )
+
+####
+# Create Site_Index
+data_combined_filtered$Site_Index <- as.numeric(factor(data_combined_filtered$Site))
+
+# Generate the Manhattan plot
+ggplot(data_combined_filtered, aes(x = Site_Index, y = Abs260_280, color = Site)) +
+  # Add background for ideal 260/280 range
+  geom_rect(aes(xmin = min(Site_Index) - 0.5, xmax = max(Site_Index) + 0.5, ymin = 1.7, ymax = 1.9),
+            fill = "red", alpha = 0.2, inherit.aes = FALSE) + 
+  # Add background for ideal 260/230 range
+  geom_rect(aes(xmin = min(Site_Index) - 0.5, xmax = max(Site_Index) + 0.5, ymin = 2.0, ymax = 2.2),
+            fill = "blue", alpha = 0.2, inherit.aes = FALSE) + 
+  # Jitter points for Abs260_280
+  geom_jitter(size = 3, alpha = 0.7, width = 0.2, height = 0) +
+  scale_color_manual(values = okabe_ito_expanded) + # Use expanded Okabe-Ito palette
+  labs(
+    title = "Manhattan Plot of Absorbance Ratios Across Sites",
+    subtitle = "Highlighting Ideal Ranges for 260/280 and 260/230",
+    x = "Sites (as Categories)",
+    y = "Absorbance Ratios",
+    color = "Site"
+  ) +
+  scale_x_continuous(
+    breaks = unique(data_combined_filtered$Site_Index),  # Breaks based on Site_Index
+    labels = unique(data_combined_filtered$Site)        # Labels corresponding to sites
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "bottom",
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  )
+
+
+
+
+str(data_combined_filtered)
+### Cleaning the data
+library(dplyr)
+
+data_cleaned <- data_combined_filtered %>%
+  # Remove missing values
+  filter(!is.na(Abs260_280) & !is.na(Abs260_230)) %>%
+  # Filter absorbance values based on biologically feasible ranges
+  filter(Abs260_280 >= 0.04 & Abs260_280 <= 2.0,
+         Abs260_230 >= 0.04 & Abs260_230 <= 2.0) %>%
+  # Identify and remove outliers using IQR
+  filter(Abs260_280 >= (quantile(Abs260_280, 0.25) - 1.5 * IQR(Abs260_280)) &
+           Abs260_280 <= (quantile(Abs260_280, 0.75) + 1.5 * IQR(Abs260_280)),
+         Abs260_230 >= (quantile(Abs260_230, 0.25) - 1.5 * IQR(Abs260_230)) &
+           Abs260_230 <= (quantile(Abs260_230, 0.75) + 1.5 * IQR(Abs260_230))) %>%
+  # Standardize data types
+  mutate(
+    Site = as.factor(Site),
+    Dataset = as.factor(Dataset),
+    Volume = as.numeric(Volume),
+    Trial = as.integer(Trial)
+  )
+
+# Review the cleaned data structure and summary
+str(data_cleaned)
+summary(data_cleaned)
+
+
+# Generate the Manhattan plot for Abs260/230
+ggplot(data_cleaned, aes(x = Site_Index, y = Abs260_230, color = Site)) +
+  # Jitter points for Abs260/230
+  geom_jitter(aes(shape = Dataset), size = 3, alpha = 0.7, width = 0.2, height = 0) +
+  scale_color_manual(values = okabe_ito_expanded) + # Use Okabe-Ito palette
+  labs(
+    title = "Manhattan Plot of Absorbance Ratios (260/230) Across Sites",
+    subtitle = "Visualizing Data Points Per Site",
+    x = "Sites (as Categories)",
+    y = "Absorbance Ratio (260/230)",
+    color = "Site",
+    shape = "Dataset"
+  ) +
+  scale_x_continuous(
+    breaks = unique(data_cleaned$Site_Index),  # Breaks based on Site_Index
+    labels = unique(data_cleaned$Site)        # Labels corresponding to sites
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "bottom",
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  )
+
+# Reshape data for combined plotting
+library(tidyr)
+
+data_long <- data_cleaned %>%
+  select(Site_Index, Site, Dataset, Abs260_280, Abs260_230) %>%
+  pivot_longer(cols = c(Abs260_280, Abs260_230), 
+               names_to = "Ratio_Type", 
+               values_to = "Absorbance")
+
+# Generate the combined Manhattan plot
+# Reshape data for combined plotting
+library(tidyr)
+
+data_long <- data_cleaned %>%
+  select(Site_Index, Site, Dataset, Abs260_280, Abs260_230) %>%
+  pivot_longer(cols = c(Abs260_280, Abs260_230), 
+               names_to = "Ratio_Type", 
+               values_to = "Absorbance")
+
+# Generate the combined Manhattan plot with background colors
+# Reshape data for combined plotting
+library(tidyr)
+
+data_long <- data_cleaned %>%
+  select(Site_Index, Site, Dataset, Abs260_280, Abs260_230) %>%
+  pivot_longer(cols = c(Abs260_280, Abs260_230), 
+               names_to = "Ratio_Type", 
+               values_to = "Absorbance")
+
+# Generate the combined Manhattan plot with no gray background
+ggplot(data_long, aes(x = Site_Index, y = Absorbance, color = Ratio_Type)) +
+  # Add background for ideal range for 260/280 (orange)
+  geom_rect(aes(xmin = min(Site_Index) - 0.5, xmax = max(Site_Index) + 0.5, ymin = 1.7, ymax = 1.9),
+            fill = "#E69F00", alpha = 0.3, inherit.aes = FALSE) + 
+  # Add background for ideal range for 260/230 (blue)
+  geom_rect(aes(xmin = min(Site_Index) - 0.5, xmax = max(Site_Index) + 0.5, ymin = 2.0, ymax = 2.2),
+            fill = "#56B4E9", alpha = 0.3, inherit.aes = FALSE) + 
+  # Jitter points for combined ratios
+  geom_jitter(aes(shape = Dataset), size = 3, alpha = 0.7, width = 0.2, height = 0) +
+  scale_color_manual(values = c("Abs260_280" = "#009E73", "Abs260_230" = "#CC79A7")) + # Updated point colors
+  labs(
+    title = "Combined Manhattan Plot of Absorbance Ratios (260/280 and 260/230)",
+    subtitle = "Ideal Ranges Highlighted Without Biologically Feasible Background",
+    x = "Sites (as Categories)",
+    y = "Absorbance Ratio",
+    color = "Ratio Type",
+    shape = "Dataset"
+  ) +
+  scale_x_continuous(
+    breaks = unique(data_long$Site_Index),  # Breaks based on Site_Index
+    labels = unique(data_long$Site)        # Labels corresponding to sites
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "bottom",
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  )
+
+data_combined_filtered %>%
+  filter(is.na(Abs260_280) | is.na(Abs260_230))
+
+
