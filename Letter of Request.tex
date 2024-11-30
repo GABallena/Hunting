@@ -1,0 +1,78 @@
+\documentclass[a4paper,11pt]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage[absolute,overlay]{textpos} % For positioning elements
+\usepackage{graphicx} % For including images
+\usepackage[left=0.75in,right=0.75in,top=1in,bottom=0.5in]{geometry}
+\usepackage{xcolor} % For color if needed
+\definecolor{burgundy}{RGB}{128, 0, 32}
+
+% Signature placeholder
+\signature{
+	\begin{minipage}[t]{0.6\textwidth} % Adjust width here
+		\raggedright % Left-align the signature text
+		\textbf{Lorem Ipsum Dolor} \\
+		Title of Position \\
+		Institution Name
+	\end{minipage}
+}
+
+\date{}
+
+% Set up for textpos
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+\begin{document}
+	
+	% Placeholder for letterhead image (using Lorem Ipsum text)
+	\begin{textblock*}{210mm}(0mm,0mm) % Adjust the position here
+		\raggedright
+		\Huge \textbf{Lorem Ipsum Institution} \\
+		\LARGE Department Name \\
+		\large City, Country \\
+		\normalsize Phone: +123 456 7890 | Email: info@loremipsum.edu
+	\end{textblock*}
+	
+	% Sample letter with placeholder addresses
+	\begin{letter}{
+			\textbf{Dear [Recipient Name]} \\
+			Department Name \\
+			Institution Name \\
+			Street Address, City, Postal Code \\
+			Country
+		}
+		
+		\opening{Dear [Recipient Name],}
+		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac bibendum enim. Ut aliquet euismod auctor. Sed ut mauris a ante egestas gravida. Vivamus placerat urna ac velit suscipit, eu volutpat nulla interdum. Fusce at lectus sollicitudin, varius velit sed, convallis turpis.
+		
+		Aliquam erat volutpat. Morbi sed vehicula eros. Nunc euismod velit nec diam sollicitudin, nec volutpat erat cursus. Integer convallis est eget pharetra gravida. Curabitur et quam nisi.
+		
+		Ut ut nisi sit amet lorem varius tristique sed id velit. Cras tincidunt dui erat, et sodales nunc eleifend nec. Fusce et purus a nisi malesuada fermentum. Donec venenatis, ante a rutrum pretium, magna augue maximus tortor, vel elementum libero metus at ligula.
+		
+		\closing{Sincerely,}
+		
+		% Address at the bottom of the page, right-aligned
+		\begin{textblock*}{150mm}(55mm,270mm) % Adjust the position here
+			\raggedleft % Right-align the text
+			\textcolor{burgundy}{Lorem Ipsum Institution} \\
+			Department Name \\
+			Street Address, City, Postal Code \\
+			Phone: +123 456 7890 \\
+			Email: info@loremipsum.edu
+		\end{textblock*}
+		
+		% Placeholder for left-aligned logo (using Lorem Ipsum text as logo)
+		\begin{textblock*}{50mm}(10mm, 265mm) % Adjust width and position (x, y)
+			\raggedright
+			\Huge \textbf{LI} % "LI" stands for Lorem Ipsum
+		\end{textblock*}
+		
+		% Placeholder for right-aligned logo (using Lorem Ipsum text as logo)
+		\begin{textblock*}{50mm}(55mm, 265mm) % Adjust width and position (x, y)
+			\raggedleft
+			\Huge \textbf{LP} % "LP" stands for Lorem Ipsum Placeholder
+		\end{textblock*}
+		
+	\end{letter}
+\end{document}
