@@ -1,0 +1,4 @@
+Data cleaning completed successfully.
+Raw data file: GWAS_Project/data/raw/Harvard_Assessment_Chap2.csv
+Cleaned data file: GWAS_Project/data/cleaned/Harvard_Assessment_Chap2_Cleaned.csv
+Columns cleaned: patient_id, treatment, age, gender, height_inches, tumor_stage, months_since_start, complications

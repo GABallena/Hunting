@@ -1,0 +1,9 @@
+patient_id,treatment,age,gender,height_inches,tumor_stage,months_since_start,complications
+1,1,25.0,0,61,Unknown,0,0
+2,1,,Unknown,68,Unknown,Unknown,Unknown
+3,1,40.0,Unknown,47.24,4.0,1,0
+4,1,,Unknown,Unknown,Unknown,Unknown,Unknown
+5,1,,Unknown,66,Unknown,Unknown,1
+6,1,22.0,Unknown,Unknown,3.0,Unknown,1
+7,1,31.0,Unknown,Unknown,Unknown,Unknown,Unknown
+8,1,5.0,0,Unknown,2.0,Unknown,0
