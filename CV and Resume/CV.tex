@@ -18,7 +18,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyfoot[L]{\normalsize References available only upon request and if shortlisted} %Larger footer text
+\fancyfoot[L]{\normalsize References available only upon request and if shortlisted} % Larger footer text
 \setlength{\footskip}{50pt} % Push footer closer to the page's bottom edge
 \renewcommand{\headrulewidth}{0pt} % Remove header line
 \renewcommand{\footrulewidth}{0pt} % Remove footer line
@@ -27,10 +27,12 @@
 \usepackage{enumitem}
 \setlist[itemize]{topsep=0pt, itemsep=1pt, leftmargin=1.5em}
 
-% Set fonts to Garamond
-\setmainfont{EB Garamond}      % Ensure this is installed
-\setsansfont{EB Garamond}      % Consistent sans-serif font
-\setmonofont{Courier New}      % Monospace font
+% Set fonts to Garamond and Courier
+\setmainfont{EB Garamond}
+\setsansfont{EB Garamond} % Or another sans-serif font if Garamond causes issues
+\setmonofont{Courier New}  % Monospace font
+\usepackage{microtype}
+
 
 % Personal data
 \name{Gerald Amiel}{Ballena}
@@ -82,7 +84,7 @@ Versatile bioinformatics specialist with extensive experience in developing scal
 
 \subsection{University of the Philippines Baguio}
 \cvitem{Graduated}{June 2018} 
-\cvitem{Thesis}{\textbf{Bioelectrocatalysis by Novel Electrogenic Alkaliphilic Bacteria \textit{Bacillus} sp. BAB-3442 Using Dual-Chambered Microbial Fuel Cell} \dotfill Poster Presentation (\texttt{PSM 47})}
+\cvitem{Thesis}{\textbf{Bioelectrocatalysis by Novel Electrogenic Alkaliphilic Bacteria \textit{Bacillus} sp. BAB-3442 Using Dual-Chambered Microbial Fuel Cell} \dotfill Poster Presentation (\textsf{PSM 47})}
 \cvitem{Accomplishments}{Advanced Placement Exam: Advanced Algebra}
 
 \subsection{Philippine Science High School CAR Campus}
@@ -116,8 +118,10 @@ Versatile bioinformatics specialist with extensive experience in developing scal
 \cvitem{Introductory}{Introduction to Data Engineering \dotfill 2020}
 \cvitem{Introductory}{COVID-19 Contact Tracing \dotfill 2020}
 \cvitem{Introductory}{Mind Control: Managing Your Mental Health During COVID-19 \dotfill 2020}
+\cvitem {Intermediate}{Supervised Learning with sci-kit learn \dotfill 2024}
 \cvitem{Introductory}{COVID-19: What You Need to Know \dotfill 2020}
 \cvitem{Introductory}{Essential Epidemiologic Tools for Public Health Practice \dotfill 2020}
+\cvitem {Advanced}{Ensemble Methods in Python (Bagging, Boosting, Stacking) \dotfill 2024}
 \cvitem{Intermediate}{Biostatistics in Public Health \dotfill 2020}
 \begin{multicols}{2}
 	\begin{itemize}
@@ -133,7 +137,7 @@ Versatile bioinformatics specialist with extensive experience in developing scal
 \begin{multicols}{2}
 	\begin{itemize}
 		\item Introduction to Genomic Technologies
-		\item \texttt{Python} for Genomic Data
+		\item \textsf{Python} for Genomic Data
 		\item Tools for Genomic Data Science
 		\item Command line tools for Genomic Data Science
 	\end{itemize}
@@ -147,8 +151,8 @@ Versatile bioinformatics specialist with extensive experience in developing scal
 	\begin{itemize}
 		\item Bioconductor in R
 		\item RNA-Seq with Bioconductor
-		\item Differential Expression Analysis with \texttt{limma}
-		\item CHIP-Seq with Bioconductor in \texttt{R}
+		\item Differential Expression Analysis with \textsf{limma}
+		\item CHIP-Seq with Bioconductor in \textsf{R}
 	\end{itemize}
 \end{multicols}
 \cvitem{Intermediate}{Visualizing Geospatial Data in R \dotfill 2024}
@@ -166,9 +170,7 @@ Versatile bioinformatics specialist with extensive experience in developing scal
 \subsection{Professional Development}
 \begin{multicols}{2}
 	\begin{itemize}
-		\item Ensemble Methods in Python (Bagging, Boosting, Stacking)
 		\item Introduction to AWS
-		\item Supervised Learning with sci-kit learn
 	\end{itemize}
 \end{multicols}
 
