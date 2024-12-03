@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2025/dev/Debian)  (format=lualatex 2024.12.2)  3 DEC 2024 04:50
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2025/dev/Debian)  (format=lualatex 2024.12.2)  4 DEC 2024 05:12
  restricted system commands enabled.
 **CV.tex
 (./CV.tex
@@ -1960,10 +1960,19 @@ Underfull \hbox (badness 10000) detected at line 80
 
 
 LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
-(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 85.
+(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 84.
 
 
-Underfull \hbox (badness 10000) detected at line 85
+Underfull \hbox (badness 10000) detected at line 84
+\TU/EBGaramond(0)/m/n/8 .
+ []
+
+
+LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
+(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 98.
+
+
+Underfull \hbox (badness 10000) detected at line 98
 \TU/EBGaramond(0)/m/n/8 .
  []
 
@@ -1972,19 +1981,19 @@ Package microtype Info: Character `156' is missing
 (microtype)             Ignoring protrusion settings for this character.
 
 LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
-(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 90.
+(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 103.
 
 
-Underfull \hbox (badness 10000) detected at line 90
+Underfull \hbox (badness 10000) detected at line 103
 \TU/EBGaramond(0)/m/n/8 .
  []
 
 
 LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
-(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 96.
+(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 109.
 
 
-Underfull \hbox (badness 10000) detected at line 96
+Underfull \hbox (badness 10000) detected at line 109
 \TU/EBGaramond(0)/m/n/8 .
  []
 
@@ -1993,24 +2002,6 @@ Underfull \hbox (badness 10000) detected at line 96
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
-(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 104.
-
-
-Underfull \hbox (badness 10000) detected at line 104
-\TU/EBGaramond(0)/m/n/8 .
- []
-
-
-LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
-(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 112.
-
-
-Underfull \hbox (badness 10000) detected at line 112
-\TU/EBGaramond(0)/m/n/8 .
- []
-
 
 LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
 (Font)              using `TU/EBGaramond(0)/b/n' instead on input line 117.
@@ -2022,17 +2013,36 @@ Underfull \hbox (badness 10000) detected at line 117
 
 
 LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
-(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 170.
+(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 125.
 
 
-Underfull \hbox (badness 10000) detected at line 170
+Underfull \hbox (badness 10000) detected at line 125
+\TU/EBGaramond(0)/m/n/8 .
+ []
+
+
+LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
+(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 131.
+
+
+Underfull \hbox (badness 10000) detected at line 131
 \TU/EBGaramond(0)/m/n/8 .
  []
 
 
 
 [2]
-Overfull \hbox (12.31155pt too wide) in paragraph at lines 189--189
+
+LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
+(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 184.
+
+
+Underfull \hbox (badness 10000) detected at line 184
+\TU/EBGaramond(0)/m/n/8 .
+ []
+
+
+Overfull \hbox (12.31155pt too wide) in paragraph at lines 203--203
 []\TU/EBGaramond(0)/b/n/10.95 Com-pre-hen-sive Bin-ning Work-flow: \TU/EBGaramo
 nd(0)/m/n/10.95 De-signed work-flows for as-sem-bly, bin-ning (\TU/EBGaramond(0
 )/b/n/10.95 MetaWRAP\TU/EBGaramond(0)/m/n/10.95 , \TU/EBGaramond(0)/b/n/10.95 ME
@@ -2051,17 +2061,17 @@ L3 programming layer <2024-05-27>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `CV.out' has not changed.
-(rerunfilecheck)             Checksum: A9CDF575B99CBF92076DEFE02BA925A8;2259.
+(rerunfilecheck)             Checksum: 0A193255F19481008461811A94DD5A23;2387.
 )
 
 Here is how much of LuaTeX's memory you used:
- 29485 strings out of 475915
+ 29487 strings out of 475915
  125240,1977958 words of node,token memory allocated
  690 words of node memory still in use:
    5 hlist, 1 vlist, 1 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 1 margin_ke
 rn, 4 glyph, 9 attribute, 85 glue_spec, 9 attribute_list, 2 write nodes
-   avail lists: 1:2,2:948,3:364,4:322,5:832,6:119,7:8518,9:541,10:8,11:746
- 51425 multiletter control sequences out of 65536+600000
+   avail lists: 1:2,2:979,3:400,4:353,5:829,6:121,7:8244,9:591,10:8,11:742
+ 51426 multiletter control sequences out of 65536+600000
  52 fonts using 14202383 bytes
  129i,12n,123p,998b,1120s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond-BoldI
@@ -2074,10 +2084,10 @@ mf-dist/fonts/opentype/public/ebgaramond/EBGaramond-Regular.otf></usr/share/texl
 ive/texmf-dist/fonts/opentype/public/fontawesome5/FontAwesome5Free-Solid-900.otf
 ></usr/share/texlive/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond-Bold
 .otf>
-Output written on CV.pdf (3 pages, 65913 bytes).
+Output written on CV.pdf (3 pages, 66468 bytes).
 
-PDF statistics: 144 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 18 named destinations out of 1000 (max. 131072)
- 128 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 148 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 19 named destinations out of 1000 (max. 131072)
+ 136 words of extra memory for PDF output out of 10000 (max. 100000000)
 
