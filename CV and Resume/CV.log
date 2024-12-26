@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2024.12.15)  26 DEC 2024 00:41
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2024.12.15)  26 DEC 2024 10:55
  restricted system commands enabled.
 **CV.tex
 (./CV.tex
@@ -2013,10 +2013,10 @@ Underfull \hbox (badness 10000) detected at line 125
 
 
 LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
-(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 131.
+(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 132.
 
 
-Underfull \hbox (badness 10000) detected at line 131
+Underfull \hbox (badness 10000) detected at line 132
 \TU/EBGaramond(0)/m/n/8 .
  []
 
@@ -2027,15 +2027,15 @@ Package microtype Info: Loading generic protrusion settings for font family
 [2]
 
 LaTeX Font Warning: Font shape `TU/EBGaramond(0)/sb/n' undefined
-(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 187.
+(Font)              using `TU/EBGaramond(0)/b/n' instead on input line 188.
 
 
-Underfull \hbox (badness 10000) detected at line 187
+Underfull \hbox (badness 10000) detected at line 188
 \TU/EBGaramond(0)/m/n/8 .
  []
 
 
-Overfull \hbox (12.31155pt too wide) in paragraph at lines 206--206
+Overfull \hbox (12.31155pt too wide) in paragraph at lines 207--207
 []\TU/EBGaramond(0)/b/n/10.95 Com-pre-hen-sive Bin-ning Work-flow: \TU/EBGaramo
 nd(0)/m/n/10.95 De-signed work-flows for as-sem-bly, bin-ning (\TU/EBGaramond(0
 )/b/n/10.95 MetaWRAP\TU/EBGaramond(0)/m/n/10.95 , \TU/EBGaramond(0)/b/n/10.95 ME
@@ -2061,7 +2061,7 @@ Here is how much of LuaTeX's memory you used:
  690 words of node memory still in use:
    5 hlist, 1 vlist, 1 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 1 margin_ke
 rn, 4 glyph, 9 attribute, 85 glue_spec, 9 attribute_list, 2 write nodes
-   avail lists: 2:884,3:400,4:353,5:829,6:121,7:8244,9:591,10:8,11:744
+   avail lists: 2:900,3:400,4:353,5:829,6:121,7:8244,9:591,10:8,11:744
  50823 multiletter control sequences out of 65536+600000
  53 fonts using 14423351 bytes
  129i,12n,123p,998b,1120s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2075,7 +2075,7 @@ ome5Brands-Regular-400.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/
 ebgaramond/EBGaramond-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/
 public/fontawesome5/FontAwesome5Free-Solid-900.otf></usr/share/texlive/texmf-dis
 t/fonts/opentype/public/ebgaramond/EBGaramond-Bold.otf>
-Output written on CV.pdf (3 pages, 78987 bytes).
+Output written on CV.pdf (3 pages, 79039 bytes).
 
 PDF statistics: 155 PDF objects out of 1000 (max. 8388607)
  121 compressed objects within 2 object streams
