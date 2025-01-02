@@ -9,10 +9,35 @@
 \nopagenumbers{} % Suppress page numbers
 
 % Required packages for ModernCV
-\usepackage{fontspec}       % Font support for XeLaTeX or LuaLaTeX
+\usepackage[quiet]{fontspec}       % Font support for XeLaTeX or LuaLaTeX
 \usepackage{fontawesome5}   % FontAwesome icons
 \usepackage{academicons}    % ORCID icons
 \usepackage{multicol}
+\usepackage{ragged2e}
+
+% Basic microtype setup without conflicting options
+\usepackage{microtype}
+
+% Font configuration
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EB Garamond}[
+    UprightFont={* Regular},
+    BoldFont={* Bold},
+    ItalicFont={* Italic},
+    BoldItalicFont={* Bold Italic}
+]
+\setsansfont{EB Garamond}[
+    UprightFont={* Regular},
+    BoldFont={* Bold},
+    ItalicFont={* Italic},
+    BoldItalicFont={* Bold Italic}
+]
+\setmonofont{Courier New}
+
+% Fix underfull boxes
+\setlength{\parskip}{0.5ex}
+\setlength{\emergencystretch}{3em}
+\raggedright
 
 % Fancyhdr for custom footer
 \usepackage{fancyhdr}
@@ -26,13 +51,6 @@
 % Adjust list spacing globally
 \usepackage{enumitem}
 \setlist[itemize]{topsep=0pt, itemsep=1pt, leftmargin=1.5em}
-
-% Set fonts to Garamond and Courier
-\setmainfont{EB Garamond}
-\setsansfont{EB Garamond} % Or another sans-serif font if Garamond causes issues
-\setmonofont{Courier New}  % Monospace font
-\usepackage{microtype}
-
 
 % Personal data
 \name{Gerald Amiel}{Ballena}
@@ -64,34 +82,84 @@
 	\makecvtitle
 	
 \section{Professional Summary}
-Versatile bioinformatics specialist with extensive experience in developing scalable workflows, computational biology, and machine learning. Successfully processed multi-terabyte datasets, streamlined bioinformatics pipelines to enhance reproducibility, and enabled actionable insights in environmental and public health projects.
+Results-driven Bioinformatics Specialist with 3+ years of experience in NGS data analysis, pipeline development, and computational biology. Proven expertise in reducing processing time by 75\% and managing 2.5TB+ daily genomic data workflows. Skilled in Python, R, and high-performance computing for environmental metagenomics and machine learning applications.
 
-\section{Experience}
-\textbf{2024 – Present} \hfill \textbf{Project Technical Specialist} \\
-\textit{University of the Philippines, College of Public Health} \\[-1em]
+\section{Skills}
+\begin{multicols}{2}
 \begin{itemize}
-	\item Developed scalable bioinformatics workflows for high-throughput sequence analysis (2.5 Terabytes each).
-	\item Automated data preprocessing workflows using Snakemake, reducing manual load by 90\% when data is available while also enhancing reproducibility and removing human error.
-	\item Collaborated with cross-disciplinary teams on projects involving public health, microbiology, and science of environmental engineering.
-	\item Enhanced data analysis pipelines, leading to actionable insights for surveillance and public health research.
+    \item Next-Generation Sequencing (NGS)
+    \item Python Programming
+    \item R Statistical Computing
+    \item Machine Learning \& AI
+    \item Pipeline Automation
+    \item High-Performance Computing (HPC)
+    \item Data Analysis \& Statistics
+    \item Metagenomics Analysis
+    \item Docker Containerization
+    \item Git Version Control
+    \item SQL Database Management
+    \item Bioinformatics Tools
 \end{itemize}
+\end{multicols}
+
+\section{Professional Experience}
+\cvitem{Project Technical Specialist}{2024 – Present}
+\textit{University of the Philippines, College of Public Health}
+\begin{itemize}
+    \item Engineered 15+ production-grade bioinformatics pipelines processing 2.5TB+ genomic data daily
+    \item Optimized computational workflows achieving 75\% reduction in resource utilization
+    \item Implemented parallel processing architecture handling 1000+ concurrent metagenomic samples
+    \item Reduced analysis time from 6 hours to 30 minutes through automated workflow optimization
+    \item Developed statistical frameworks for environmental monitoring with 99.9\% accuracy
+\end{itemize}
+
+\cvitem{AI Biology Specialist}{2024 – Present}
+\textit{Outlier.ai (Remote)}
+\begin{itemize}
+	\item Provided biology expertise to train generative AI models, ensuring accuracy and relevance in domain-specific outputs.
+	\item Assessed, reviewed, and ranked AI-generated text for factuality, clarity, and scientific integrity.
+	\item Crafted and evaluated STEM-related questions to refine AI responses and improve user satisfaction.
+\end{itemize}
+
+\section{Technical Skills}
+\cvitem{Programming \& Development}{
+    \begin{itemize}
+        \item \textbf{Programming Languages:} Python, R, Bash, SQL
+		\item \textbf{Bioinformatics Tools:} BioPython, Bioconductor, BLAST, BWA, SAMtools, Kraken2, MetaPhlAn, MEGAHIT, SPAdes, BUSCO, QUAST
+        \item \textbf{Workflow Management:} Snakemake, Nextflow, Docker, Conda
+        \item \textbf{Version Control:} Git, GitHub, GitLab
+        \item \textbf{Databases:} PostgreSQL, MongoDB, CARD, RefSeq
+    \end{itemize}
+}
+
+\section{Key Projects}
+\cvitem{Environmental Metagenomics Pipeline}{
+    \begin{itemize}
+        \item Developed end-to-end workflow for taxonomic and functional profiling
+    \end{itemize}
+}
+
+\cvitem{Statistical Analysis Framework}{
+    \begin{itemize}
+        \item Created automated system for environmental data analysis
+        \item Implemented advanced statistical methods for contamination detection
+        \item Built visualization tools for quality metrics and diversity indices
+    \end{itemize}
+}
 
 \section{Education}
 \subsection{University of the Philippines Diliman}
 \cvitem{Graduated}{July 2022}
 \cvitem{Thesis}{In silico assessment of the association of pathogenicity and metal-resistance potential of \textit{Fusarium} spp.\dotfill \href{https://www.biorxiv.org/content/10.1101/2022.10.12.511937v1}{Pre-print Link}}
 \cvitem{Accomplishments}{DOST ASTHRDP-Scholarship \\ Calculated Effective GPA (MS): 1.72}
-\subsection{Relavant Courses}
-\begin{multicols}{2}
+\subsection{Relevant Courses}
 	\begin{itemize}
-		\item Industrial microbiology
-		\item Molecular Phylogenetics
-		\item Epigenetics
-		\item Advanced Cell and Molecular Biology
+		\item Industrial Microbiology
+		\item Molecular Phylogenetics (Maximum Likelihood, Bayesian)
+		\item Epigenetics (Chromatin Remodeling, Histone Modifications)
+		\item Advanced Cell and Molecular Biology (Gene Expression, Signal Transduction)
+		\item Microbial Physiology and Metabolism
 	\end{itemize}
-\end{multicols}
-
-
 
 
 
@@ -100,26 +168,24 @@ Versatile bioinformatics specialist with extensive experience in developing scal
 \cvitem{Thesis}{\textbf{Bioelectrocatalysis by Novel Electrogenic Alkaliphilic Bacteria \textit{Bacillus} sp. BAB-3442 Using Dual-Chambered Microbial Fuel Cell} \dotfill Poster Presentation (\textsf{PSM 47})}
 \cvitem{Accomplishments}{Advanced Placement Exam: Advanced Algebra}
 
-\subsection{Philippine Science High School CAR Campus}
-\cvitem{Graduated}{March 2014}
-\cvitem{Accomplishments}{Focused on STEM curriculum with a strong emphasis on research and scientific inquiry.}
-
-
-\section{Skills}
-\subsection{Technical Skills}
-\cvitem{Programming Languages}{Python (Fluent), R (Advanced), Bash (Intermediate), Perl \& BioPerl (Intermediate), C++ (Fair).}
-\cvitem{Bioinformatics Tools}{Kraken2, MetaPhlAn, MEGAHIT, Snakemake, Prokka, Jellyfish, BUSCO, and others.}
-\cvitem{Workflow Automation}{Snakemake, Conda, YAML (Configuration Files).}
-\cvitem{Data Visualization}{ggplot2, Plotly, matplotlib, QGIS.}
-\cvitem{High-Performance Computing}{Slurm, Docker.}
-
-
-\subsection{Soft Skills}
-\cvitem{Collaboration}{Proficient in leading cross-disciplinary projects and fostering effective team collaboration.}
-\cvitem{Technical Writing}{Skilled in preparing technical reports and documentation using TeX tools such as TeXStudio and Overleaf.}
-\cvitem{Problem-Solving}{Adept at diagnosing and optimizing bioinformatics pipelines to enhance efficiency, reproducibility, and both statistical and scientific robustness.}
-
-
+\section{Laboratory and Technical Skills}
+\cvitem{Advanced Laboratory Techniques}{
+	\begin{itemize}
+		\item Molecular Biology: PCR, Western Blotting, DNA/RNA extraction, Bacterial transformation
+		\item Microbiology: Bacterial isolation, Antibiotic susceptibility testing, Strain development
+		\item Bioinformatics: Phylogenetic analysis (Maximum Parsimony, Bayesian Inference, Maximum Likelihood)
+		\item Cell Biology: Stem cell research, Histological techniques, Animal handling
+		\item Industrial Processes: Ethanol distillation, Fermentation optimization
+	\end{itemize}
+}
+\cvitem{Core Competencies}{
+	\begin{itemize}
+		\item Experimental design and protocol optimization
+		\item Quality control and documentation
+		\item Laboratory safety and compliance
+		\item Scientific paper analysis and critique
+	\end{itemize}
+}
 
 \section{Certifications and Relevant Coursework}
 \subsection{Certifications}
@@ -129,110 +195,114 @@ Versatile bioinformatics specialist with extensive experience in developing scal
 \cvitem{Data Literacy}{DataCamp  \dotfill 2024}
 \cvitem{Principles, Statistical and Computational Tools for Reproducible Data Science}{Harvard EdX \dotfill 2024}
 
-\subsection{Relevant MOOCs}
-\cvitem{Introductory}{Introduction to Data Engineering \dotfill 2020}
-\cvitem{Introductory}{COVID-19 Contact Tracing \dotfill 2020}
-\cvitem{Introductory}{Mind Control: Managing Your Mental Health During COVID-19 \dotfill 2020}
-\cvitem{Introductory}{COVID-19: What You Need to Know \dotfill 2020}
-\cvitem{Introductory}{Essential Epidemiologic Tools for Public Health Practice \dotfill 2020}
-\cvitem {Intermediate}{Supervised Learning with sci-kit learn \dotfill 2024}
-\cvitem{Intermediate}{Visualizing GeoSpatial Data in \texttt{Python} \dotfill 2024}
-\cvitem{Intermediate}{Working with Geospatial Data in \texttt{Python} \dotfill 2024}
-\cvitem {Intermediate}{Unsupervised learning in \texttt{Python} \dotfill 2024}
-\cvitem {Advanced}{Ensemble Methods in \texttt{Python} (Bagging, Boosting, Stacking) \dotfill 2024}
-\cvitem{Intermediate}{Biostatistics in Public Health \dotfill 2020}
+\subsection{Professional Development and Online Certifications}
 \begin{multicols}{2}
-	\begin{itemize}
-		\item Summary Statistics in Public Health
-		\item Hypothesis Testing In Public Health
-		\item Simple Regression Analysis in Public Health
-		\item Multiple Regression Analysis in Public Health
-	\end{itemize}
+	\cvitem{Data Science \& Programming}{
+		\begin{itemize}
+			\item \textbf{Python Specialization} (DataCamp, 2024)
+			\begin{itemize}
+				\item Data Analysis, Machine Learning, Statistical Analysis
+				\item Scikit-learn, Pandas, NumPy, Matplotlib
+				\item Geospatial Analysis and Visualization
+			\end{itemize}
+			\item \textbf{Data Engineering Certification} (DataCamp, 2024)
+			\item \textbf{R Programming Specialization} (DataCamp, 2024)
+			\begin{itemize}
+				\item Advanced Data Visualization
+				\item Statistical Analysis and Modeling
+			\end{itemize}
+		\end{itemize}
+	}
+	
+	\cvitem{Bioinformatics \& Genomics}{
+		\begin{itemize}
+			\item \textbf{Genomic Data Science Specialization} (Coursera, 2024)
+			\begin{itemize}
+				\item Bioconductor, RNA-Seq Analysis, CHIP-Seq
+				\item Python and R for Genomic Analysis
+				\item Command-line Tools for Genomics
+			\end{itemize}
+			\item \textbf{Advanced Bioinformatics} (Coursera, 2024)
+		\end{itemize}
+	}
+	
+	\cvitem{Public Health \& Biostatistics}{
+		\begin{itemize}
+			\item \textbf{Biostatistics in Public Health} (2024)
+			\begin{itemize}
+				\item Statistical Analysis and Hypothesis Testing
+				\item Regression Analysis and Epidemiologic Tools
+			\end{itemize}
+		\end{itemize}
+	}
 \end{multicols}
 
 
-\cvitem{Intermediate}{Genomic Data Science \dotfill 2024}
-\begin{multicols}{2}
-	\begin{itemize}
-		\item Introduction to Genomic Technologies
-		\item \textsf{Python} for Genomic Data
-		\item Tools for Genomic Data Science
-		\item Command line tools for Genomic Data Science
-	\end{itemize}
-\end{multicols}
-
-
-
-
-\cvitem{Intermediate}{Genomic Analysis track \dotfill 2024}
-\begin{multicols}{2}
-	\begin{itemize}
-		\item Bioconductor in R
-		\item RNA-Seq with Bioconductor
-		\item Differential Expression Analysis with \textsf{limma}
-		\item CHIP-Seq with Bioconductor in \textsf{R}
-	\end{itemize}
-\end{multicols}
-\cvitem{Intermediate}{Visualizing Geospatial Data in R \dotfill 2024}
-  
-\cvitem{Advanced}{Hyperparameter Tuning in R, Designing Machine Learning Workflows in Python \dotfill  2024}
-\cvitem{Advanced}{Bioinformatics via Coursera \dotfill 2024}
-(\textit{University of California, San Diego}) 
+\section{Key Achievements}
 \begin{itemize}
-	\item Finding Hidden Messages (with Honors)
+	\item Built and deployed metagenomics pipeline currently processing >2.5TB genomic data annually  
+	\item Decreased pipeline runtime through workflow optimization
+	\item Automated data processing workflows reducing analysis time per dataset
 \end{itemize}
 
-
-
-
-\subsection{Professional Development}
+\section{Selected Projects}
 \begin{multicols}{2}
+\cvitem{Environmental Data Analysis Platform}{
+    \begin{itemize}
+        \item Developed comprehensive R/Python pipeline for physicochemical data analysis
+        \item Implemented statistical modeling with multiple regression, PLS, and machine learning
+        \item Created interactive visualizations for water quality parameters and sampling sites
+    \end{itemize}
+}
+
+\cvitem{Geospatial Analysis Framework}{
+    \begin{itemize}
+        \item Built automated mapping system for environmental sampling locations
+        \item Integrated multiple data sources including OpenStreetMap and local databases
+        \item Generated publication-quality maps with statistical overlays
+    \end{itemize}
+}
+
+\cvitem{Metagenomic Analysis Pipeline}{
+    \begin{itemize}
+		\item Developed pipeline capable of processing large-scale genomic data with multi-threaded processing
+		\item Successfully analyzed 26 metagenomic samples
+		\item Implemented parallel processing optimization, enabling efficient batch analysis across multiple CPU cores
+    \end{itemize}
+}
+
+\cvitem{Metagenomic Pipeline Development}{
 	\begin{itemize}
-		\item Introduction to AWS
+		\item Developed end-to-end workflow for taxonomic profiling and diversity analysis
+		\item Integrated Kraken2, Bracken, and scikit-bio for automated processing
+		\item Standardized pipeline outputs across multiple datasets through version control and containerization
 	\end{itemize}
+}
+
+\cvitem{Statistical Optimization Framework}{
+    \begin{itemize}
+        \item Created automated workflow for k-mer profile analysis
+        \item Implemented statistical model selection and validation
+        \item Reduced analysis time from days to hours
+    \end{itemize}
+}
+
+\cvitem{Statistical Analysis Automation}{
+    \begin{itemize}
+        \item Designed reproducible workflows for multivariate environmental data analysis
+        \item Implemented automated quality control and outlier detection systems
+        \item Created standardized reporting templates for research findings
+        \item Built parameter optimization system for multiple trimming tools (Trimmomatic, fastp, BBDuk)
+    \end{itemize}
+}
 \end{multicols}
-
-
-
-\section{Scripts and Workflows}
-
-\cvitem{Key Pipelines and Workflows}{
-	Developed and implemented scalable workflows and pipelines using Snakemake, Python, and Bash for metagenomic analysis, diversity profiling, and bioinformatics tool management. Highlights include:
-	\begin{itemize}
-		\item \textbf{Metagenomic Analysis Pipeline:} Automated workflows for trimming, taxonomic profiling (\textbf{Kraken2}, \textbf{Bracken}), and diversity calculations (\textbf{scikit-bio}), ensuring high reproducibility and scalability.
-		\item \textbf{Comprehensive Binning Workflow:} Designed workflows for assembly, binning (\textbf{MetaWRAP}, \textbf{MEGAHIT}), and MAG validation (\textbf{CheckM2}), streamlining large-scale metagenomic projects.
-		\item \textbf{Plasmid and ARG Analysis:} Built pipelines for plasmid detection and antimicrobial resistance profiling using \textbf{metaSPAdes}, \textbf{PlasmidFinder}, and \textbf{RGI}.
-		\item \textbf{Diversity Analysis:} Developed Python-based scripts and R workflows for alpha/beta diversity metrics (Shannon, Chao1, Bray-Curtis) and visualizations using \textbf{ggplot2}.
-	\end{itemize}
+\cvitem{Automation Systems}{
+    \begin{itemize}
+        \item \textbf{Version Management:} Developed automated system for tracking and updating Bioconda dependencies
+        \item \textbf{Bootstrapping Framework:} Created reproducible analysis system with automated parameter exploration
+        \item \textbf{Workflow Management:} Built scalable pipeline for processing 1000+ metagenomic samples
+        \item \textbf{Resource Optimization:} Implemented parallel processing and memory management for HPC environments
+    \end{itemize}
 }
-
-\cvitem{Automation and Custom Tools}{
-	Created tools and workflows for parameter optimization, repository mining, and bioinformatics tool management:
-	\begin{itemize}
-		\item \textbf{Randomized Parameter Testing:} Automated preprocessing parameter exploration for tools like \textbf{Trimmomatic}, \textbf{Cutadapt}, and \textbf{fastp}, enabling systematic optimization.
-		\item \textbf{Bioconda Repository Mining:} Developed a Python-based scraper to extract and filter bioinformatics tools for metagenomics and AMR research.
-		\item \textbf{General Bootstrapping Workflow:} Automated sampling of paired-end reads for diversity and functional analyses using \textbf{seqtk}.
-		\item \textbf{Tool Management:} Streamlined dependency discovery, YAML updates, and Conda-based environment management for reproducible pipelines.
-		\item \textbf{Statistical Optimization for k-mer Profiles:} Designed a Snakemake workflow integrated with custom Python scripts to identify the best statistical fit (non-parametric, parametric, or transformed parametric) for k-mer profiles, facilitating the selection of appropriate statistical tests for raw data analysis.
-	\end{itemize}
-}
-
-
-\cvitem{Advanced Analysis and Statistical Workflows}{
-	Designed workflows for k-mer analysis, contaminant detection, and statistical evaluations:
-	\begin{itemize}
-		\item \textbf{K-mer Analysis:} Automated frequency distribution fitting, entropy calculations, and alignment validation for metagenomic datasets (\textbf{Jellyfish}, \textbf{MASH}).
-		\item \textbf{Contaminant Filtering:} Built pipelines for k-mer mapping and statistical testing against known contaminant databases (\textbf{UniVec}, \textbf{PhiX}, \textbf{KMA}).
-		\item \textbf{Visualization Pipeline:} Developed R-based workflows for ridgeline and violin plots, NMDS, and heatmaps to visualize diversity and taxonomic profiles.
-	\end{itemize}
-}
-
-
-
-
-
-
 
 \end{document}
-
-% Add at the very end of the document
